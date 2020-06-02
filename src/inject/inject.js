@@ -10,7 +10,7 @@ chrome.extension.sendMessage({}, function (response) {
                     if (mutation.type === "childList") {
                         for (let addedNode of mutation.addedNodes) {
                             if (addedNode.getAttribute("role") === "presentation") {
-                                document.querySelector('div[role="presentation"]').remove();
+                                addedNode.remove();
 
                                 var css = "body { overflow: visible !important; }";
                                 var head =
